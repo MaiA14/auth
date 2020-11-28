@@ -1,12 +1,9 @@
-import React from "react";
-import Header from '../components/Header';
-import Login from '../components/Login';
+import React, { useState, useEffect, useRef } from 'react';
+import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import Button from '@material-ui/core/Button';
 
-export const MapPage = () => {
+const MapPage = ({ array, isAdding, getLocation }) => {
 
-  return (
-    <React.Fragment>
-      <div>map</div>
-      </React.Fragment>
-    );
-  };
+ 
+  }
+export default MapPage;

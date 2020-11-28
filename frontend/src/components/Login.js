@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import UserService from '../services/UserService';
 import Signup from './Signup';
-
+import { Link } from 'react-router-dom';
 
 class Login extends Component {
   state = {
@@ -23,7 +23,13 @@ class Login extends Component {
     if (email && password) {
         try {
             await UserService.login(user);
-            this.props.history.push('/');
+            // browserHistory.push('/map');
+            // history.push("/map");
+            // this.history.pushState('/', 'map');
+            // history.push('/map')
+            // hashHistory.push('/map');
+            console.log('props',this.props);
+            this.props.history.push('/map');
         }
         catch(e) {
             console.error(e);
@@ -51,9 +57,11 @@ class Login extends Component {
              type="text" className="form-input" placeholder=" Email"></input>
             <input name="password" onChange={this.changeInput} value={this.state.password}
              type="password" className="form-input" placeholder=" Password"></input>
+             {/* <Link to={`/map`}> */}
               <button className="app-button" onClick={this.onLogInUser}>
                 Login
               </button>
+            {/* </Link> */}
           </div>
         </div>
         <div className={hideSignup}>
@@ -70,3 +78,4 @@ class Login extends Component {
 }
 
 export default Login;
+
